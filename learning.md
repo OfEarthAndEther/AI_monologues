@@ -25,3 +25,10 @@
 1. Attraction toward Brighter Fireflies : This is the exploitation phase. The movement is determined by the brightness (_I_) which is propotional to the objective fucntion. ```\(I(r)=I_{0}e^{-\gamma r^{2}}\) ```
 2. __Distance-based Decay__ : This is the Clustering mechanism. Because light intensity drops with distance ```(r)```, fireflies only "care" about their local neighbors. This allows the population to split and find multiple peaks at once.
 3. __Reduction of Randomness__ : Controlled by the ```\alpha``` parameter. As the algorithm iterates, the random "step" size is usually reduced (cooled), allowing the algorithm to settle into the global optimum with high precision.
+
+#### The Nuances
+1. __Automatic Sub-patching__: Unlike Particle Swarm Optimization (PSO), where every particle is pulled toward one "Global Best," FA fireflies can cluster into several groups. This makes FA naturally superior for multi-modal optimization (finding several good solutions rather than just one).
+
+2. __The Nonlinearity of Light__: The use of the absorption coefficient ```(gamma)``` allows the algorithm to behave like a Random Walk when ```gamma --> 0``` and like a local search when ```gamma --> infty```. This tunability is its greatest strength.
+
+3. __Premature Convergence Risks__: In your image, "Problem 1" mentions premature convergence. A sophisticated intro acknowledges that FA’s attraction can sometimes be too strong, causing the population to collapse into a sub-optimal point before the search space is fully explored.
