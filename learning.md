@@ -23,3 +23,5 @@
 
 #### __The Convergence Triad__
 1. Attraction toward Brighter Fireflies : This is the exploitation phase. The movement is determined by the brightness (_I_) which is propotional to the objective fucntion. ```\(I(r)=I_{0}e^{-\gamma r^{2}}\) ```
+2. __Distance-based Decay__ : This is the Clustering mechanism. Because light intensity drops with distance ```(r)```, fireflies only "care" about their local neighbors. This allows the population to split and find multiple peaks at once.
+3. __Reduction of Randomness__ : Controlled by the ```\alpha``` parameter. As the algorithm iterates, the random "step" size is usually reduced (cooled), allowing the algorithm to settle into the global optimum with high precision.
