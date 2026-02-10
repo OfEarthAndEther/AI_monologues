@@ -20,3 +20,7 @@ __Pelican Optimization Algorithm__
 - The LFPOA reduces dimensionality, balances exploration and exploitation, leads to a global optimum, helping to select relevant features. 
 - The EL combines five machine learning techniques to handle multiple classifiers and produce a single output, often leading to higher accuracy.
 - 
+
+---
+#### Base Paper
+- 
