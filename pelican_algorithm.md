@@ -22,5 +22,21 @@ __Pelican Optimization Algorithm__
 - 
 
 ---
-#### Base Paper
+## Base Paper
+- To validate its efficiency, the POA was tested against twenty-three benchmark objective functions and four distinct real-world engineering design challenges.
+- Comparative analysis demonstrates that the POA maintains a superior balance between global search and local convergence when compared to eight other established algorithms.
+- The algorithm models the hunting strategy of pelicans, specifically:
+    1. Locating prey: Identifying the target area.
+    2. Attacking: Diving toward the prey from a height.
+    3. Foraging: Spreading wings on the water surface to guide fish into their throat pouch.
+#### 1. __Phase 1__
+- Moving Towards Prey (__Exploration__) In this phase, the pelican (search agent) identifies the location of the prey (randomly generated in the search space) and moves toward it. This facilitates the scanning of different areas of the search space.
+    - _Mechanism_: If the __prey's location__ is __better__ (has a better objective function value) than the __pelican's current position__, the pelican __moves toward__ the prey. If not, it __moves away__ to search elsewhere.
+    - _Randomization_: A parameter I (randomly 1 or 2) is used to __alter the displacement magnitude__, enhancing __exploration__ power.
+#### 2. __Phase 2__
+- Winging on the Water Surface (__Exploitation__) After reaching the prey's area, the pelican spreads its wings on the water surface to catch fish. This models the local search in the neighborhood of the pelican's current position to converge to a better solution.
+    - Mechanism: The algorithm examines points in the neighborhood of the pelican. The __radius of this neighborhood decreases linearly__ as the iteration count (t) increases, allowing for __finer local searching__ as the algorithm progresses.
+    - Equation: The position is updated based on a neighborhood radius factor ```R⋅(1−t/T)```, where T is the maximum number of iterations. Sensitivity analysis suggests __R=0.2__ is often optimal.
+#### Improvements from Previous Methods
+- Superior Convergence: In testing on unimodal functions, POA demonstrated high exploitation ability, effectively converging to the global optimum compared to competitors
 - 
