@@ -47,3 +47,81 @@ For A* to be optimal, the heuristic $h(n)$ must be "well-behaved":
 If you have two admissible heuristics, $h_1$ and $h_2$, and $h_2(n) \ge h_1(n)$ for all nodes, then $h_2$ dominates $h_1$.
     - Why it matters: A dominating heuristic is "tighter" (closer to the real cost). It provides better guidance and forces A* to expand fewer nodes, making the search more efficient.
 
+---
+#### Admissibility
+If $h^*(n)$ is the true, actual minimum cost to get from node $n$ to the goal, then $h(n)$ is admissible if and only if:
+    $$0 \leq h(n) \leq h^*(n)$$
+for all nodes $n$ in the state space.
+
+To be admissible, a heuristic function $h(n)$ must be optimistic. In the context of the A* search algorithm, this means the heuristic never overestimates the actual cost to reach the goal from a given node $n$.
+
+---
+## AGENT
+In AI, agent is anything that can be viewd as percieving environment through **sensors** and acting upon it through **actuators**.
+- Percept: The agent's perceptual inputs at any given instant.
+- Percept Sequence: The complete history of everything the agent has ever percieved.
+- Agent Function: A mathematical mapping ($f: P^* \to A$) that describes how an agent chooses an action ($A$) based on its entire percept sequence ($P^*$).
+- Agent Program: The concrete implementation of the agent function that runs on a physical architecture.
+
+#### The PEAS Framework
+To design a rational agent, we must first specify its Task Environment using the PEAS framework.
+
+    - P – Performance Measure: The objective criteria used to evaluate the success of an agent’s behavior (e.g., safety, cost, speed).
+
+    - E – Environment: The external world or context in which the agent operates (e.g., city streets, a laboratory, a virtual network).
+
+    - A – Actuators: The mechanisms the agent uses to perform actions (e.g., wheels, robotic arms, display screens).
+
+    - S – Sensors: The hardware/software the agent uses to receive inputs (e.g., cameras, microphones, GPS, data logs).
+
+Example: Automated Medical Diagnosis System
+    - Performance: Healthy patient, minimized costs, minimized legal liability.
+    - Environment: Patient, hospital staff.
+    - Actuators: Screen display (questions, tests, diagnoses, treatments).
+    - Sensors: Keyboard/Voice (symptoms, findings, patient answers).
+
+#### Environment Characteristics
+The complexity of an agent's design depends heavily on the properties of its environment. We categorize environments along several dimensions:
+    - Fully Observable vs. Partially Observable: Does the agent have access to the complete state of the environment at all times? (e.g., Chess is fully observable; Poker is partially observable).
+    - Deterministic vs. Stochastic: Is the next state determined solely by the current state and the agent's action? (e.g., Crossword puzzles are deterministic; Driving is stochastic/uncertain).
+    - Episodic vs. Sequential: Is the current decision independent of previous ones? (e.g., Image classification is episodic; Chess is sequential).
+    - Static vs. Dynamic: Does the environment change while the agent is deliberating? (e.g., Crossword is static; Taxi driving is dynamic).
+    - Discrete vs. Continuous: Are the states and actions finite or infinite? (e.g., Chess has discrete moves; Steering a car is continuous).
+    - Known vs. Unknown: Does the agent know the "rules of physics" or the outcomes of its actions beforehand?
+
+#### Agent Structures (Architectures)
+As agents become more sophisticated, they incorporate more information into their decision-making process.
+
+A. Simple Reflex Agents
+These agents select actions based only on the current percept, ignoring the rest of the percept sequence. They work using Condition-Action Rules (If-Then statements).
+
+    - Pros: Very fast and efficient.
+
+    - Cons: Only work if the environment is fully observable.
+
+B. Model-based Reflex Agents
+To handle partial observability, these agents maintain an internal state that tracks parts of the world they cannot currently see.
+
+    - Mechanism: It uses a "model" of how the world evolves and how its own actions affect the world.
+
+C. Goal-based Agents
+These agents use goal information to describe desirable situations. They act to reach a specific destination or state.
+
+    - Search and Planning: Unlike reflex agents, they consider the future (e.g., "Will this action lead me closer to my goal?").
+
+D. Utility-based Agents
+When there are multiple ways to reach a goal, a utility-based agent chooses the "best" path. It uses a utility function to map a state to a real number representing the agent's "happiness" or degree of satisfaction.
+
+    - Trade-offs: Useful when goals conflict (e.g., speed vs. safety) or when there is uncertainty about reaching the goal.
+
+E. Learning Agents
+A learning agent is designed to improve its performance over time. It is divided into four conceptual components:
+
+    - Learning Element: Responsible for making improvements.
+
+    - Performance Element: Responsible for selecting external actions (equivalent to the standard agent).
+
+    - Critic: Provides feedback to the learning element based on a fixed performance standard.
+
+    - Problem Generator: Suggests actions that will lead to new and informative experiences (exploration).
+
