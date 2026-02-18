@@ -6,6 +6,7 @@
 6. one eye red, one eye purple
 7. stereopsis & "head peering" (for ballistic strikes)
 8. predator-prey gap
+9. Benchmarking: 23 classic benchmark functions & several IEEE test functions.
 
 
 new words:
