@@ -22,7 +22,9 @@ Systematic Search StrategiesProblem-solving agents use search algorithms to find
 - Informed (Heuristic) Search: Algorithms like $A^*$ and Greedy Best-First Search use a heuristic function $h(n)$ to estimate the cost to the goal, significantly improving efficiency.
 - Metaheuristics and Genetic Algorithms
 When state spaces are too large for systematic search, metaheuristics provide a framework for finding "near-optimal" solutions. Genetic Algorithms (GA) are a prime example, mimicking natural selection through crossover, mutation, and selection operators to evolve a population of candidate solutions.
-- Deep Dive: The Mantis Search Algorithm (MSA)
+
+---
+# Deep Dive: The Mantis Search Algorithm (MSA)
 1. Algorithm Inspiration
 - The Mantis Search Algorithm (MSA) is a novel bio-inspired optimizer that emulates the complex lifecycle and predatory behaviors of the praying mantis (Mantis religiosa). Unlike the Grey Wolf Optimizer (GWO) which focuses on pack hierarchy, MSA models the transition from solitary hunting to mating and the unique occurrence of sexual cannibalism.
 2. Mathematical Model
