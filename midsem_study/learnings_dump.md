@@ -125,3 +125,18 @@ A learning agent is designed to improve its performance over time. It is divided
 
     - Problem Generator: Suggests actions that will lead to new and informative experiences (exploration).
 
+---
+![heuristics theory](image.png)
+![tree vs graph](image-1.png)
+![admissibilty & consistency](image-2.png)
+- consistency is stricter than admissibilty. which means, a heuristics, if consistent will always be admissible; but a heuristics, which is admissible is not guaranteed to be consistent.
+
+---
+## Proof of A* optimality
+![A* optimality proof](image-3.png)
+
+---
+## Concept of DOMINANCE in heuristics
+![dominance of heuristics](image-4.png)
+![misplaced vs manhattan](image-5.png)
+![conclusion](image-6.png)
